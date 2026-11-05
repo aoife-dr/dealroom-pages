@@ -1,8 +1,8 @@
-# client-pages
+# dealroom-pages
 
 Client-facing Dealroom pages, served by GitHub Pages. Each page is password-protected with [StatiCrypt](https://github.com/robinmoisson/staticrypt), so this repo only holds encrypted pages. Each page lives in its own folder with a random slug that doesn't name the client, so the URL can't be guessed and the repo doesn't show who the pages are for. The root page is blank, and `robots.txt` and a `noindex` meta keep the pages out of search engines.
 
-Page URLs look like `https://aoife-dr.github.io/client-pages/<slug>/`.
+Page URLs look like `https://aoife-dr.github.io/dealroom-pages/<slug>/`.
 
 ## What's kept on your Mac, never in the repo
 
