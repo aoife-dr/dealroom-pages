@@ -20,6 +20,8 @@ To find a page's slug and its republish command, look it up in `pages.tsv`:
 column -t -s $'\t' ~/.config/client-pages/pages.tsv
 ```
 
+Passwords look like `k7mp-3xra-h9tw-q2fe`: four groups of four lowercase letters and numbers, with no lookalike characters (`0`/`o`, `1`/`l`/`i`), so they're easy to read and type.
+
 Copy a password to send to the client, in a separate message from the link:
 
 ```bash
