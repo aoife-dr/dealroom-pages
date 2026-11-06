@@ -85,7 +85,13 @@ PY
 mkdir -p "$SECRETS" && chmod 700 "$SECRETS"
 pwfile="$SECRETS/$slug.password"
 if [ ! -s "$pwfile" ]; then
-  (umask 077; LC_ALL=C tr -dc 'A-Za-z0-9' </dev/urandom | head -c 20 > "$pwfile")
+  # Four groups of four, e.g. k7mp-3xra-...: lowercase only, and no lookalikes
+  # (0/o, 1/l/i), so it survives being read aloud or typed. About 79 bits.
+  (umask 077; python3 -I -c '
+import secrets
+abc = "abcdefghjkmnpqrstuvwxyz23456789"
+print("-".join("".join(secrets.choice(abc) for _ in range(4)) for _ in range(4)), end="")
+' > "$pwfile")
   echo "new password created: $pwfile"
 fi
 
